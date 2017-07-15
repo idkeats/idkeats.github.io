@@ -36,7 +36,13 @@
   });
 
   messageInput.addEventListener('keydown', function(event){
-    maxCharacters.textContent = "Characters remaining: " + (messageInput.attributes.maxLength.value - messageInput.value.length);
+    maxCharacters.classList.add('entry');
+    maxCharacters.textContent = (messageInput.attributes.maxLength.value - messageInput.value.length);
+  });
+
+  messageInput.addEventListener('focusout', function(event){
+    maxCharacters.classList.remove('entry');
+    maxCharacters.textContent = (messageInput.attributes.maxLength.value - messageInput.value.length);
   });
 
 
