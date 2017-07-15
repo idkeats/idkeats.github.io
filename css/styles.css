@@ -1,9 +1,27 @@
+
+
+* {
+  transition: 0.3s;
+}
+
 body {
   background-image: url('../images/idk-cover.svg');
   background-position: top right;
   background-size: cover;
   background-repeat: no-repeat;
   background-color: #EAEAEA;
+}
+
+.main-heading {
+  font-size: 50px;
+}
+
+.main-heading span {
+  color: #FF4E4A;
+}
+
+.sub-heading {
+  font-weight: 200;
 }
 
 .flex-container {
@@ -34,6 +52,14 @@ body {
   max-height: 100px;
 }
 
+.max-char {
+  color: lightgray;
+} 
+
+.max-char.entry {
+  color: #333;
+} 
+
 .danger {
   border-color: #f00;
 }
@@ -53,4 +79,30 @@ body {
 .footer_logo {
   max-height: 60px;
   max-width: 60px;
+}
+
+.flex-icons {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  height: 60px;
+}
+
+.social-link {
+  display: block;
+  margin: 5px;
+}
+
+.flex-icons button {
+  background-color: transparent;
+  box-sizing: border-box;
+  padding: 0;
+  border-width: 0px;
+  border-style: none;
+  border-color: transparent;
+  border-image: none;
+}
+
+.social-color {
+  color: #FF6F68;
 }
