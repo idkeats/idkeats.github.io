@@ -1,0 +1,56 @@
+body {
+  background-image: url('../images/idk-cover.svg');
+  background-position: top right;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-color: #EAEAEA;
+}
+
+.flex-container {
+  display: flex;
+}
+
+.align-center {
+  align-items: center;
+}
+
+.justify-around {
+  justify-content: space-around;
+}
+
+.form-container {
+  background-color: #F2F2F2;
+  margin-top: 25px;
+  padding: 20px;
+  border-bottom: 4px solid #30FFEA;
+}
+
+.form-container h4 {
+  margin-top: 0px;
+}
+
+.contact-form textarea {
+  max-width: 100%;
+  max-height: 100px;
+}
+
+.danger {
+  border-color: #f00;
+}
+
+.fixed-bottom {
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  left: 0;
+}
+
+.footer--bg-color {
+  background-color: #FF6F68;
+  max-height: 60px;
+}
+
+.footer_logo {
+  max-height: 60px;
+  max-width: 60px;
+}
