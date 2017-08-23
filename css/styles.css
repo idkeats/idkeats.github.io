@@ -45,7 +45,7 @@ body::-webkit-scrollbar-thumb {
   height: 250px;
   border-radius: 10%;
   border: 5px solid #eeeeee;
-  margin: 125px auto 0;
+  margin: 75px auto 0;
 }
 
 .main-heading {
