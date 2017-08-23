@@ -5,11 +5,47 @@
 }
 
 body {
-  background-image: url('../images/idk-cover.png');
+  /* background-image: url('../images/idk-cover.png');
   background-position: top right;
   background-size: cover;
+  background-repeat: no-repeat; */
+  background-color: #eeeeee;
+  font-family: 'Raleway', sans-serif;
+}
+
+body::-webkit-scrollbar {
+  width: 12px;
+}
+
+body::-webkit-scrollbar-track {
+  -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+}
+
+body::-webkit-scrollbar-thumb {
+  background-color: #FF4E4A;
+  outline: 1px solid #eeeeee;
+}
+
+.logo-container {
+  /* background-image: url('../images/profiles.png');
+  background-position: top right;
+  background-size: cover;
+  background-repeat: no-repeat; */
+  background-color: #FF4E4A;
+  height: 250px;
+}
+
+.logo-container .logo {
+  background-image: url('../images/idk-plaid-logo-sticker.png');
+  background-position: center;
+  background-size: contain;
   background-repeat: no-repeat;
-  background-color: #EAEAEA;
+  background-color: #FF4E4A;
+  width: 250px;
+  height: 250px;
+  border-radius: 10%;
+  border: 5px solid #eeeeee;
+  margin: 125px auto 0;
 }
 
 .main-heading {
@@ -28,6 +64,11 @@ body {
   display: flex;
 }
 
+.flex-container.center {
+  align-items: center;
+  justify-content: center;
+}
+
 .align-center {
   align-items: center;
 }
@@ -38,13 +79,21 @@ body {
 
 .form-container {
   background-color: #F2F2F2;
-  margin-top: 25px;
+  margin: 150px 0 75px;
   padding: 20px;
   border-bottom: 4px solid #30FFEA;
 }
 
-.form-container h4 {
-  margin-top: 0px;
+.form-container h1 {
+  font-weight: 200;
+}
+
+.contact_form-label {
+  font-size: 20px;
+}
+
+.form-group:first-child .contact_form-label {
+  margin-top: 10px;
 }
 
 .contact-form textarea {
@@ -73,9 +122,12 @@ body {
 
 .submit-btn {
   color: #007D87;
+  font-size: 24px;
+  text-align: center;
   text-decoration: none;
-  padding: 0;
-  border: 0px solid transparent;
+  /* padding: 0; */
+  border: 2px solid #007D87;
+  border-radius: 4px;
 }
 
 .submit-btn:hover, .submit-btn:focus {
