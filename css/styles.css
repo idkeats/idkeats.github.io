@@ -5,10 +5,6 @@
 }
 
 body {
-  /* background-image: url('../images/idk-cover.png');
-  background-position: top right;
-  background-size: cover;
-  background-repeat: no-repeat; */
   background-color: #eeeeee;
   font-family: 'Raleway', sans-serif;
 }
@@ -23,14 +19,10 @@ body::-webkit-scrollbar-track {
 
 body::-webkit-scrollbar-thumb {
   background-color: #FF4E4A;
-  outline: 1px solid #eeeeee;
+  outline: 1px solid #FF6F68;
 }
 
 .logo-container {
-  /* background-image: url('../images/profiles.png');
-  background-position: top right;
-  background-size: cover;
-  background-repeat: no-repeat; */
   background-color: #FF4E4A;
   height: 250px;
 }
@@ -125,7 +117,6 @@ body::-webkit-scrollbar-thumb {
   font-size: 24px;
   text-align: center;
   text-decoration: none;
-  /* padding: 0; */
   border: 2px solid #007D87;
   border-radius: 4px;
 }
@@ -138,51 +129,7 @@ body::-webkit-scrollbar-thumb {
   outline-offset: 0px;
 }
 
-.fixed-bottom {
-  position: fixed;
-  bottom: 0;
-  right: 0;
-  left: 0;
-}
-
-.footer--bg-color {
-  background-color: #FF4E4A;
-  max-height: 60px;
-}
-
-.footer_logo {
-  max-height: 60px;
-  max-width: 60px;
-}
-
-.flex-icons {
-  display: flex;
-  justify-content: flex-end;
-  align-items: center;
-  height: 60px;
-}
-
 .social-link {
   display: block;
   margin: 5px;
-}
-
-.flex-icons button {
-  background-color: transparent;
-  box-sizing: border-box;
-  padding: 0;
-  border-width: 0px;
-  border-style: none;
-  border-color: transparent;
-  border-image: none;
-}
-
-.flex-icons button:focus {
-  border: 0px solid transparent;
-  outline: 0px auto -webkit-focus-ring-color;
-  outline-offset: 0px;
-}
-
-.social-color {
-  color: #FF6F68;
 }
