@@ -136,6 +136,9 @@ body::-webkit-scrollbar-thumb {
 }
 
 @media only screen and (max-width: 420px) {
+  body {
+    border-bottom: 4px solid #FF4E4A;
+  }
   .logo-container {
     height: 200px;
   }
@@ -148,10 +151,9 @@ body::-webkit-scrollbar-thumb {
 
   .form-container {
     background-color: #eeeeee;
-    margin: 0;
+    margin: 55px 0 0;
     padding: 15px;
-    position: absolute;
-    bottom: 0;
+    border-bottom: 0px solid #FF4E4A;
   }
   .form-container h1 {
     font-size: 28px;
