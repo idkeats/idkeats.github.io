@@ -14,7 +14,7 @@
   nameInput.addEventListener('blur', function(event){
     const myName = nameInput.value;
     const validName = /^[0-9a-zA-Z\s]+$/.test(myName);
-    if(!validName){
+    if(myName && !validName){
       nameInput.classList.add('danger');
       submitButton.disabled = true;
     } else {
