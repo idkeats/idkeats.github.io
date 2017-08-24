@@ -1,19 +1,19 @@
 (function(){
-  var myForm = document.getElementById('emailForm');
-  var submitButton = document.getElementById('submitButton');
+  const $ = jQuery;
+  const myForm = document.getElementById('emailForm');
+  const submitButton = document.getElementById('submitButton');
 
-  var nameInput = document.getElementById('name');
-  var emailInput = document.getElementById('email');
-  var messageInput = document.getElementById('message');
-  var maxCharacters = document.getElementById('maxCharacters');
+  const nameInput = document.getElementById('name');
+  const emailInput = document.getElementById('email');
+  const messageInput = document.getElementById('message');
+  const hiddenInput = document.getElementById('hiddenInput');
+  const maxCharacters = document.getElementById('maxCharacters');
 
   messageInput.textContent = '';
 
-  console.log(messageInput.attributes);
-
   nameInput.addEventListener('blur', function(event){
-    var myName = nameInput.value;
-    var validName = /^[0-9a-zA-Z\s]+$/.test(myName);
+    const myName = nameInput.value;
+    const validName = /^[0-9a-zA-Z\s]+$/.test(myName);
     if(!validName){
       nameInput.classList.add('danger');
       submitButton.disabled = true;
@@ -24,8 +24,8 @@
   });
 
   emailInput.addEventListener('blur', function(event){
-    var myEmail = emailInput.value;
-    var validEmail = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/.test(myEmail);
+    const myEmail = emailInput.value;
+    const validEmail = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/.test(myEmail);
     if(!validEmail){
       emailInput.classList.add('danger');
       submitButton.disabled = true;
@@ -48,7 +48,38 @@
 
 
   myForm.addEventListener('submit', function(event) {
-    document.getElementById('message').value.trim();
-    myForm.setAttribute('action', 'https://formspree.io/idkeats@gmail.com');
+    event.preventDefault();
+    if(!hiddenInput.value) {
+      $.ajax({
+        url: 'http://107.170.216.104:3000/register',
+        method: 'POST',
+        data: {
+          email: emailInput.value.trim(),
+          name: nameInput.value.trim(),
+          message: messageInput.value.trim()
+        }
+      })
+      .done(res => {
+        clearForm(res.name);
+      })
+      .fail((err, status, errorData) => {
+        if(err.responseJSON.err.code === 11000){
+          alert(`${emailInput.value.trim()} is already registered in the database. Please try again with a different email.`);
+        }
+      });
+    } else {
+      // Hidden input field was filled ignore the request
+      clearForm();
+    }
   });
+
+  function clearForm(name) {
+    emailInput.value = '';
+    nameInput.value = '';
+    messageInput.value = '';
+
+    if(name) {
+      // Mark open model here
+    }
+  }
 }());
