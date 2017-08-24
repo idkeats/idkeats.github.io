@@ -51,7 +51,7 @@
     event.preventDefault();
     if(!hiddenInput.value) {
       $.ajax({
-        url: 'http://localhost:3000/register',
+        url: 'http://107.170.216.104:3000/register',
         method: 'POST',
         data: {
           email: emailInput.value.trim(),
